@@ -11,7 +11,7 @@ const BlogPostDetail = () => {
     readTime: '8 min read',
     engagement: '2.5k views',
     trending: 95,
-    image: "/images/1.jpg",
+    image: "/images/i-1.jpg",
  
     content: `
       The decentralized finance (DeFi) landscape has undergone a remarkable transformation since its inception. What began as simple token swap mechanisms has evolved into a sophisticated ecosystem of financial instruments and yield-generating strategies.

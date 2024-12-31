@@ -33,7 +33,7 @@ const Header = () => {
           <Link href="/" className="flex items-center space-x-2">
             <Blocks className="w-8 h-8 text-purple-500" />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
-              MetaChain
+              SmartChain
             </span>
           </Link>
 

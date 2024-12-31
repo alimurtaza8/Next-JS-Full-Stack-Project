@@ -12,7 +12,7 @@ const SmartContractPostDetail = () => {
         readTime: '7 min read',
         engagement: '3.1k views',
         trending: 90,
-        image: "/images/i-5.webp",
+        image: "/images/i-4.jpg",
     
         content: `
           Smart contracts are one of the most groundbreaking innovations brought by blockchain technology. These self-executing contracts with terms directly written into code are transforming how agreements are created, validated, and executed.
