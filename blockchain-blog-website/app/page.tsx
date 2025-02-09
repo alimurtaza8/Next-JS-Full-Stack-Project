@@ -2,7 +2,7 @@
 
 import { LineChart, Line,ResponsiveContainer } from 'recharts';
 
-import React, { useState, useEffect ,Suspense, useRef,FC } from 'react';
+import React, { useState, useEffect ,FC } from 'react';
 // import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {ArrowRight,
@@ -12,108 +12,109 @@ import {ArrowRight,
 
 import FeaturedPosts from "@/components/FeaturedPosts";
 
-import { Canvas, useFrame } from '@react-three/fiber';
-import { AdaptiveDpr, AdaptiveEvents, PerspectiveCamera, Environment, Float } from '@react-three/drei';
+// import { Canvas, useFrame } from '@react-three/fiber';
+// import { AdaptiveDpr, AdaptiveEvents, PerspectiveCamera, Environment, Float } from '@react-three/drei';
 // import { motion } from 'framer-motion';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
-import { Mesh } from 'three';
+// import { EffectComposer, Bloom } from '@react-three/postprocessing';
+// import { Mesh } from 'three';
+import HeroSection from '@/components/HeroSection';
 
 
-function CryptoModel() {
-  const meshRef = useRef<Mesh>(null);
+// function CryptoModel() {
+//   const meshRef = useRef<Mesh>(null);
 
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.005;
-    }
-  });
+//   useFrame(() => {
+//     if (meshRef.current) {
+//       meshRef.current.rotation.y += 0.005;
+//     }
+//   });
 
-  return (
-    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-      <mesh ref={meshRef} scale={2} position={[0, 0, 0]}>
-        {/* Sphere placeholder */}
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="cyan" />
-      </mesh>
-    </Float>
-  );
-}
+//   return (
+//     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
+//       <mesh ref={meshRef} scale={2} position={[0, 0, 0]}>
+//         {/* Sphere placeholder */}
+//         <sphereGeometry args={[1, 32, 32]} />
+//         <meshStandardMaterial color="cyan" />
+//       </mesh>
+//     </Float>
+//   );
+// }
 
 
-const HeroSection = () => {
-  return (
-    <section className="relative h-screen w-full bg-[#0a0b1e] overflow-hidden">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0b1e] pointer-events-none z-10" />
+// const HeroSection = () => {
+//   return (
+//     <section className="relative h-screen w-full bg-[#0a0b1e] overflow-hidden">
+//       {/* Gradient Overlay */}
+//       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0b1e] pointer-events-none z-10" />
       
-      {/* 3D Canvas */}
-      <div className="absolute inset-0">
-        <Canvas>
-          <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-          <Suspense fallback={null}>
-            <Environment preset="night" />
-            <CryptoModel />
-            <EffectComposer>
-              <Bloom
-                intensity={1.5}
-                luminanceThreshold={0.9}
-                luminanceSmoothing={0.025}
-              />
-            </EffectComposer>
-          </Suspense>
-          <AdaptiveDpr pixelated />
-          <AdaptiveEvents />
-        </Canvas>
-      </div>
+//       {/* 3D Canvas */}
+//       <div className="absolute inset-0">
+//         <Canvas>
+//           <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+//           <Suspense fallback={null}>
+//             <Environment preset="night" />
+//             <CryptoModel />
+//             <EffectComposer>
+//               <Bloom
+//                 intensity={1.5}
+//                 luminanceThreshold={0.9}
+//                 luminanceSmoothing={0.025}
+//               />
+//             </EffectComposer>
+//           </Suspense>
+//           <AdaptiveDpr pixelated />
+//           <AdaptiveEvents />
+//         </Canvas>
+//       </div>
 
-      {/* Content */}
-      <div className="relative z-20 flex items-center justify-center h-full container mx-auto px-4">
-        <div className="text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
-              The Future of Web3
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Explore the decentralized universe of blockchain technology, NFTs, and DeFi innovations
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:opacity-90 transition-opacity">
-                Start Exploring
-              </button>
-              <button className="px-8 py-3 rounded-xl border border-purple-500/20 text-gray-300 hover:text-white hover:bg-purple-500/10 transition-colors">
-                Learn More
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+//       {/* Content */}
+//       <div className="relative z-20 flex items-center justify-center h-full container mx-auto px-4">
+//         <div className="text-center max-w-4xl">
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//           >
+//             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
+//               The Future of Web3
+//             </h1>
+//             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+//               Explore the decentralized universe of blockchain technology, NFTs, and DeFi innovations
+//             </p>
+//             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+//               <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:opacity-90 transition-opacity">
+//                 Start Exploring
+//               </button>
+//               <button className="px-8 py-3 rounded-xl border border-purple-500/20 text-gray-300 hover:text-white hover:bg-purple-500/10 transition-colors">
+//                 Learn More
+//               </button>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </div>
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute w-full h-full">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full opacity-20"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 10 + 5}px`,
-                height: `${Math.random() * 10 + 5}px`,
-                background: `radial-gradient(circle, rgba(147,51,234,1) 0%, rgba(79,70,229,1) 100%)`,
-                animation: `float ${Math.random() * 10 + 10}s linear infinite`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+//       {/* Animated Background Elements */}
+//       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+//         <div className="absolute w-full h-full">
+//           {[...Array(20)].map((_, i) => (
+//             <div
+//               key={i}
+//               className="absolute rounded-full opacity-20"
+//               style={{
+//                 top: `${Math.random() * 100}%`,
+//                 left: `${Math.random() * 100}%`,
+//                 width: `${Math.random() * 10 + 5}px`,
+//                 height: `${Math.random() * 10 + 5}px`,
+//                 background: `radial-gradient(circle, rgba(147,51,234,1) 0%, rgba(79,70,229,1) 100%)`,
+//                 animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+//               }}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 
 
@@ -508,6 +509,7 @@ export default function Home() {
     <div>
       
       <HeroSection />
+      {/* <HeroSection2 /> */}
       <Categories />
       {/* <FeaturedPosts /> */}
       <FeaturedPosts />

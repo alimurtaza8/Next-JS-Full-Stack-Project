@@ -53,7 +53,7 @@ const Footer = () => {
                 <Link href="/" className="flex items-center space-x-2 mb-6">
                   <Blocks className="w-8 h-8 text-purple-500" />
                   <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
-                    MetaChain
+                    SmartChain
                   </span>
                 </Link>
                 <p className="text-gray-400 mb-6 max-w-md">
@@ -123,7 +123,7 @@ const Footer = () => {
           <div className="py-6 border-t border-purple-500/10">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="text-gray-400 text-sm mb-4 md:mb-0">
-                © {currentYear} MetaChain. All rights reserved.
+                © {currentYear} SmartChain. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
                 <button className="text-gray-400 hover:text-purple-400 transition-colors">
