@@ -8,7 +8,7 @@ const BlockchainCube: React.FC = () => {
     <mesh rotation={[0.5, 0.5, 0]}>
       <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial 
-        color="#4F46E5"
+        color="#111212"
         roughness={0.3}
         metalness={0.7}
       />
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
-          <div className="lg:w-1/2 space-y-8">
+          <div className="pt-10 lg:w-1/2 space-y-8">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
